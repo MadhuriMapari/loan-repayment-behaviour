@@ -1,0 +1,12 @@
+feature,dtype,description
+TotalIncome,float64,Sum of applicant and co-applicant monthly income (currency units).
+IncomeToLoanRatio,float64,Total monthly income / (LoanAmount*1000). Higher may indicate affordability.
+EMI,float64,Approximate monthly installment = (LoanAmount*1000)/Loan_Amount_Term.
+BalanceIncome,float64,TotalIncome - EMI. Proxy for residual income after repayment.
+FamilySize,int64,Applicant (1) + dependents + spouse if married.
+HasCreditHistory,int64,"1 if Credit_History == 1, else 0."
+IsGraduate,int64,1 if Education == 'Graduate'.
+IsSelfEmployed,int64,1 if Self_Employed == 'Y'.
+IncomeBand,category,Binned TotalIncome for segmentation.
+LoanAmtBand,category,Binned LoanAmount (thousands) for segmentation.
+TermBand,category,Binned loan term (months) for segmentation.
