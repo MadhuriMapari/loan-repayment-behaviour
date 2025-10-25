@@ -1,0 +1,6 @@
+,Female,Graduate,Male,No,Not Graduate,Rural,Semiurban,Urban,Yes
+Gender,0.67,,0.693,,,,,,
+Married,,,,0.629,,,,,0.716
+Education,,0.708,,,0.612,,,,
+Self_Employed,,,,0.686,,,,,0.683
+Property_Area,,,,,,0.615,0.768,0.658,
