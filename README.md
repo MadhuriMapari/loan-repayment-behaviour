@@ -101,7 +101,8 @@ These metrics ground the visuals in statistical credibility — every conclusion
 
 ##  Full Analytical Report  
 
- [Read the complete EDA report ](docs/EDA_Explained.md)  
+- [Read the complete EDA report ](docs/EDA_Explained.md)  
+- [Feature Engineering Explained](docs/Feature_Engineering_Explained.md)
 Includes detailed visuals, formula explanations, and fairness analysis.
 
 ---
