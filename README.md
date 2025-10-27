@@ -28,12 +28,12 @@ The insights will help design ethical, data-driven outreach strategies aligned w
 
 | Phase |  Key Focus | Deliverables | Output |
 |:--|:--|:--|:--|
-| 1 | ** Setup & Planning** | Create repo, folder structure, utils, and documentation |  `README.md`, `utils_paths.py` |
-| 2 | ** Data Intake & Cleaning** |  Consolidated and validated open loan data (600+ records) | `loan_data_clean_start.csv` |
-| 3 | ** Exploratory Data Analysis** | Mapped patterns of income, credit history, and default | [ EDA Explained Report ](docs/EDA_Explained.md) |
-| 4 | ** Feature Engineering** |  Derived indicators for income comfort, EMI ratio, and payment resilience | `loan_features.csv`, feature dictionary |
-| 5 | ** Modelling (Planned)** | Logistic Regression & Random Forest with SHAP-based explainability | `04_model_baselines.ipynb` |
-| 6 | ** Explainability & Fairness (Planned)** | Power BI storytelling dashboard for decision-maker|
+| 1 | **Setup & Planning** | Create repo, folder structure, utils, and documentation |  `README.md`, `utils_paths.py` |
+| 2 | **Data Intake & Cleaning** |  Consolidated and validated open loan data (600+ records) | `loan_data_clean_start.csv` |
+| 3 | **Exploratory Data Analysis** | Mapped patterns of income, credit history, and default | [ EDA Explained Report ](docs/EDA_Explained.md) |
+| 4 | **Feature Engineering** |  Derived indicators for income comfort, EMI ratio, and payment resilience | `loan_features.csv`, feature dictionary |
+| 5 | **Modelling (Planned)** | Logistic Regression & Random Forest with SHAP-based explainability | `04_model_baselines.ipynb` |
+| 6 | **Explainability & Fairness (Planned)** | Power BI storytelling dashboard for decision-maker|
 
 ---
 
@@ -101,7 +101,7 @@ These metrics ground the visuals in statistical credibility — every conclusion
 
 ##  Full Analytical Report  
 
- [Read the complete EDA report →](docs/EDA_Explained_Full.md)  
+ [Read the complete EDA report ](docs/EDA_Explained.md)  
 Includes detailed visuals, formula explanations, and fairness analysis.
 
 ---
