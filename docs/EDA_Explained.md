@@ -51,9 +51,7 @@ Such skew suggests applying `log(1+x)` transformation before modelling.
 
 Outliers were identified via the Inter-Quartile Range (IQR) rule:
 
-$\big[
-\text{Outlier if } x < Q_1 - 1.5(Q_3-Q_1) \text{ or } x > Q_3 + 1.5(Q_3-Q_1)
-\big]$
+Outlier if  $x < Q_1 - 1.5(Q_3-Q_1)$  or  $x > Q_3 + 1.5(Q_3-Q_1)$
 
  *Result:* 2–3 % of records exceeded this range for income and loan size — acceptable given natural financial diversity.
 
@@ -74,7 +72,7 @@ $\big[
 
 ## Univariate Analysis  
 
-### 1 Numeric Variables  
+### 1. Numeric Variables  
 
 <p align="center">
   <img src="../images/advanced_eda_viz/numeric_distributions.png" alt="Numeric Distributions" width="75%"/>
@@ -89,7 +87,7 @@ $\big[
 
 ---
 
-### 2 Categorical Variables  
+### 2. Categorical Variables  
 
 | Variable | Dominant Category | % Share |
 |:--|:--|--:|
@@ -105,7 +103,7 @@ $\big[
 
 ## Bivariate Analysis — Target Relationships  
 
-### 1 Credit History vs Loan Status  
+### 1. Credit History vs Loan Status  
 
 <p align="center">
   <img src="../images/advanced_eda_viz/approval_rate_Credit_History.png" alt="Approval Rate by Credit History" width="60%"/>
@@ -125,20 +123,20 @@ $\big[
 
 ---
 
-### 2 Income & Loan Metrics  
+### 2. Income & Loan Metrics  
 
 Scatterplot and regression line show moderate correlation (`r=0.58`) between ApplicantIncome and LoanAmount.  
 This indicates income partially drives loan size, but not approval likelihood.
 
 ---
 
-### 3 Loan Term and Approval  
+### 3. Loan Term and Approval  
 
 Histogram overlay shows little variation in approval by term length; most applicants opt for 360-month terms — not discriminatory.
 
 ---
 
-### 4 Gender, Education, and Fairness Check  
+### 4. Gender, Education, and Fairness Check  
 
 | Segment | Approval Rate | Notes |
 |:--|:--:|:--|
@@ -168,9 +166,9 @@ $$\big[
 
 | Top Positive Correlations | r |
 |:--|--:|
-| ApplicantIncome ↔ LoanAmount | 0.58 |
-| Credit_History ↔ Loan_Status | 0.54 |
-| TotalIncome (App+Coapp) ↔ LoanAmount | 0.61 |
+| ApplicantIncome vs LoanAmount | 0.58 |
+| Credit_History vs Loan_Status | 0.54 |
+| TotalIncome (App+Coapp) vs LoanAmount | 0.61 |
 
  *Interpretation:*  
 - Total earning power drives loan amount.  
@@ -181,23 +179,24 @@ $$\big[
 
 ## Statistical Testing for Group Differences  
 
-### 1 Welch’s t-Test  
+### 1. Welch’s t-Test  
 
 Compared mean LoanAmount between approved vs rejected groups.  
 
 $[
 t = 3.84,\ p < 0.001
 ]$
+
 => significant difference; approved applicants tend to borrow slightly less relative to income.
 
-### 2 ANOVA on Property Area  
+### 2. ANOVA on Property Area  
 
 $[
 F(2,611) = 4.92, p = 0.008
 ]$  
 => repayment outcomes differ by property location (semi-urban performs best).
 
-### 3 Chi-Square on Education  
+### 3. Chi-Square on Education  
 
 $[
 \chi^2 = 2.43, p = 0.12
@@ -208,15 +207,15 @@ $[
 
 ##  Multivariate Exploration  
 
-### 1 Pairwise Relationships  
+### 1. Pairwise Relationships  
 
 <p align="center">
-  <img src="../images/advanced_eda_viz/pairplot_key_features.png" alt="Pairplot Key Features" width="80%"/>
+  <img src="../images/advanced_eda_viz/pairgrid_numeric.png" alt="Pairplot Key Features" width="80%"/>
 </p>
 
 Patterns reveal clustering by Credit_History; other dimensions overlap — good candidate for logistic classification.
 
-### 2 Logistic Regression Preview  
+### 2. Logistic Regression Preview  
 
 Quick baseline model (for interpretive purpose only):
 
@@ -253,7 +252,7 @@ Monitoring such fairness gaps during model retraining ensures compliance and eth
 | Welch t-stat | $(\bar{x}_1-\bar{x}_0)/\sqrt{s_1^2/n_1+s_0^2/n_0}$ | Mean difference |
 | ANOVA F-stat | $MS_B/MS_W$ | Multi-group comparison |
 | Chi-Square | $\sum (O-E)^2/E$ | Independence test |
-| Fairness Gap | $|\hat{p}_A-\hat{p}_B|$ | Equity audit |
+| Fairness Gap | $\hat{p}_A-\hat{p}_B$ | Equity audit |
 
 ---
 
