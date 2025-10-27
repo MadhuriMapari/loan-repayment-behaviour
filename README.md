@@ -1,124 +1,103 @@
-#  Loan Repayment Behaviour Analytics
+# The Trust Equation — Data Stories Behind Loan Repayment  
 
-> *A 21-day analytical journey — from open loan-repayment data to explainable, fair, and actionable insights.*
-
----
-
-##  Overview
-
-Late repayments often indicate financial stress or disengagement.  
-This project explores open loan-repayment data to uncover factors that separate on-time payers from those who default.  
-The goal is to build interpretable, fair predictive models — inspired by **Inland Revenue’s customer-centric philosophy** of early intervention and supportive engagement.
+*A data storytelling project that turns credit records into insights on trust, fairness, and financial wellbeing.*
 
 ---
 
-##  Objective
+##  Why This Project Matters  
 
-Conduct advanced analysis of open loan-repayment data to identify **transparent, fair, and actionable** patterns in repayment behaviour.  
-The insights will help design ethical, data-driven outreach strategies aligned with Inland Revenue’s values of fairness, empathy, and compliance.
+Every repayment tells a story — of confidence, hardship, or opportunity.  
+This project transforms open loan-repayment data into **evidence-based insights** that help financial and government organisations engage customers early, fairly, and effectively.
+
+It’s not just about predicting who will repay.  
+It’s about understanding **why people repay**, **how trust is built**, and **how data can be used responsibly** to support them.
 
 ---
 
-##  Project Flow
+##  From Data to Decisions  
 
-| Phase | Stage | Key Focus | Output |
+| Stage | Focus | Deliverable | Status |
 |:--|:--|:--|:--|
-| **1. Setup & Planning** | Days 1-2 | Create repo, folder structure, utils, and documentation |  `README.md`, `utils_paths.py` |
-| **2️. Data Intake & Cleaning** | Days 3-4 | Load, inspect, and clean Kaggle dataset | `loan_data_clean_start.csv` |
-| **3️. Exploratory Data Analysis** | Days 5-7 | Discover patterns, correlations, and fairness indicators | [ EDA Explained Report →](docs/EDA_Explained.md) |
-| **4️. Feature Engineering** | Days 8-10 | Create behavioural & ratio-based features | `loan_features.csv`, feature dictionary |
-| **5️. Modelling (Planned)** | Days 11-13 | Baseline Logistic Regression & Random Forest | `04_model_baselines.ipynb` |
-| **6️. Explainability & Fairness (Planned)** | Days 14-15 | SHAP, parity checks | Visual report + Power BI metrics |
+| 1️ | **Data Collection & Cleaning** | Consolidated and validated open loan data (600+ records) | Done |
+| 2 | **Exploratory Data Analysis (EDA)** | Mapped patterns of income, credit history, and default | Done |
+| 3 | **Fairness & Segmentation** | Quantified demographic and geographic equity | Done |
+| 4 | **Feature Engineering** | Derived indicators for income comfort, EMI ratio, and payment resilience | In Progress |
+| 5 | **Predictive Modelling** | Logistic Regression & Random Forest with SHAP-based explainability | Planned |
+| 6 | **Actionable Dashboard** | Power BI storytelling dashboard for decision-makers | Planned |
 
 ---
 
-##  Updated 21-Day Schedule (Progress → Feature Engineering)
+##  Headline Insights  
 
-| Day Range | Focus Area | Deliverables | Status |
-|:--|:--|:--|:--|
-| **1-2** | Repository setup, `.gitignore`, project board, utils | Base repo live + paths configured |  Done |
-| **3-4** | Data acquisition & intake | Clean CSV, missing-value analysis |  Done |
-| **5-7** | Exploratory Data Analysis | Distributions, correlations, fairness snapshot |  Done |
-| **8-9** | Feature design | Income-loan ratio, EMI, balance-income, bins |  In Progress |
-| **10** | Feature validation + export | Feature dictionary + ready CSV |  Pending |
+> **Credit History is Destiny, but Income Comfort Builds Confidence.**
 
----
-
-##  Key Insights from EDA
-
-- **Credit History (0.54 corr)** → strongest predictor of approval  
-- **Income-to-Loan Ratio** → secondary signal for affordability  
-- **Education & Property Area** → mild but ethical drivers  
-- **No major demographic bias** → approval rates similar across gender  
-
-Detailed narrative, visuals, and fairness analysis:  
- [**EDA Explained Document →**](docs/EDA_Explained.md)
+| Factor | What We Learned | What It Means |
+|:--|:--|:--|
+| **Credit History** | ~80 % approval for clean records, ~20 % for poor ones | Trust is the strongest currency in lending. |
+| **Income-to-Loan Ratio** | Better predictor than income alone | Sustainable affordability beats raw wealth. |
+| **Property Area** | Semi-urban borrowers most consistent | Economic balance drives repayment stability. |
+| **Demographics** | Gender and education differences < 5 % | Lending patterns are largely fair and inclusive. |
 
 ---
 
-##  Next Steps (Feature Engineering)
+##  Visual Storytelling  
 
-1. **Derive new behavioural features**  
-   - `IncomeToLoanRatio`, `BalanceIncome`, `EMI`, `FamilySize`
-2. **Create categorical bands**  
-   - Income bands, Loan amount bands, and Term bands for interpretability
-3. **Validate feature distributions**  
-   - Ensure no negative or skewed features distort models
-4. **Save processed dataset**  
-   - `loan_features.csv` in `/data/processed/`
+<p align="center">
+  <img src="images/advanced_eda_viz/correlation_heatmap.png" alt="Correlation Heatmap" width="30%"/>
+  <img src="images/advanced_eda_viz/violin_Credit_History_by_target.png" alt="Credit History Violin Plot" width="30%"/>
+  <img src="images/advanced_eda_viz/boxen_Credit_History_by_target.png" alt="Credit History Boxen Plot" width="30%"/>
+</p>
 
----
-
-##  Tools & Libraries
-
-| Category | Tools |
-|:--|:--|
-| Languages | Python (pandas, scikit-learn, matplotlib, seaborn), SQL (optional) |
-| Environment | Jupyter / Colab |
-| Visualization | Power BI (for dashboards) |
-| Repository Mgmt | GitHub Project Board & Issues for tracking |
+**Figure:**  
+(1) Correlations show credit history as the most influential factor.  
+(2) Violin plots reveal distribution of repayment probability.  
+(3) Boxen plots highlight variability between risk groups.
 
 ---
 
-##  Repository Structure
+## ️ Analytical Backbone  
 
-```text
-Loan_Repayment_Behaviour_Analytics/
-│
-├── notebooks/
-│   ├── 01_data_intake.ipynb
-│   ├── 02_eda.ipynb
-│   └── 03_feature_engineering.ipynb
-│
-├── data/
-│   ├── raw/          # Original Kaggle data
-│   ├── interim/      # Cleaned datasets & EDA outputs
-│   └── processed/    # Feature-engineered data
-│
-├── src/
-│   ├── utils_paths.py
-│   └── utils_visuals.py
-│
-├── docs/
-│   ├── EDA_Explained.md
-│   └── reports/ (coming soon)
-│
-├── images/
-│   └── eda_plots/
-│
-└── README.md
-```
+| Concept | Formula | Role in the Analysis |
+|:--|:--|:--|
+| **Approval Rate** | $\hat{p}=x/n$ | Quantifies success ratio within each borrower segment. |
+| **Confidence Interval** | $\hat{p}\pm1.96\sqrt{\hat{p}(1-\hat{p})/n}$ | Measures reliability of observed rates. |
+| **Correlation** | $r_{XY}=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)$ | Evaluates feature influence on repayment. |
+| **Fairness Gap** | $\Delta_{AB}=|\hat{p}_A-\hat{p}_B|$ | Tests equity across customer subgroups. |
+
+These metrics ground the visuals in statistical credibility — every conclusion is testable and traceable.
 
 ---
 
-##  Author
+##  What Stakeholders Can Take Away  
+
+- **For Financial Institutions:** Identify early signs of payment stress and offer tailored repayment pathways.  
+- **For Policymakers:** Track fairness in credit access and outcomes to maintain trust in public programmes.  
+- **For Data Teams:** Build interpretable, bias-aware models that align with both performance and equity.  
+- **For Citizens:** Transparent analytics that explain *why* decisions are made — not just *what* decisions are made.
+
+---
+
+##  Full Analytical Report  
+
+📘 [Read the complete EDA report →](docs/EDA_Explained_Full.md)  
+Includes detailed visuals, formula explanations, and fairness analysis.
+
+---
+
+##  Why This Work Stands Out  
+
+✔ **Ethical by design** — fairness and transparency are built in, not added later.  
+✔ **Cross-audience clarity** — written for analysts *and* decision-makers.  
+✔ **Evidence-driven** — every finding backed by measurable data.  
+✔ **Scalable vision** — roadmap extends to modelling, dashboards, and deployment.
+
+---
+
+##  Author  
 
 **Madhuri Mapari**  
-📧 maparimadhuri@gmail.com  
+*Data & AI Specialist — blending analytics, fairness, and storytelling to power responsible decisions.*
 
 ---
 
-## ⚖️ License
-Licensed under the **Apache 2.0 License** — free for educational and fair-use demonstration.
-
----
+*Updated October 2025 • Part of the Loan Repayment Behaviour Analytics Project*
