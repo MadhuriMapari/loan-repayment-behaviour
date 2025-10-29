@@ -1,0 +1,13 @@
+feature,role,dtype,description
+Balance_Income,numeric,float64,Residual income after EMI
+CoapplicantIncome,numeric,float64,Co-applicant monthly income
+EMI,numeric,float64,Equated Monthly Installment (approx. monthly burden)
+Education,categorical,object,Education level
+Gender,categorical,object,Applicant gender
+Income_to_Loan_Ratio,numeric,float64,Affordability ratio (TotalIncome / LoanAmount)
+Income_x_CreditHistory,numeric,float64,Interaction: total income scaled by credit history
+Loan_Amount_Term,numeric,float64,Loan term (months)
+Loan_Status,target,int64,"Target: 1=approved/paid, 0=not approved/default (as per dataset)"
+Married,categorical,object,Marital status
+Property_Area,categorical,object,Borrower property area
+Self_Employed,categorical,object,Self-employment flag

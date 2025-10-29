@@ -1,9 +1,0 @@
-Approved borrowers tend to have lower coapplicantincome than non-approved ones.
-Approved borrowers tend to have higher credit_history than non-approved ones.
-Borrowers with Loan_ID = 'LP002984' show higher approval likelihood in this sample.
-Borrowers with Gender = 'Male' show higher approval likelihood in this sample.
-Borrowers with Married = 'Yes' show higher approval likelihood in this sample.
-Borrowers with Dependents = '2' show higher approval likelihood in this sample.
-Borrowers with Education = 'Graduate' show higher approval likelihood in this sample.
-Borrowers with Self_Employed = 'No' show higher approval likelihood in this sample.
-Borrowers with Property_Area = 'Semiurban' show higher approval likelihood in this sample.

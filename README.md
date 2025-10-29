@@ -1,129 +1,87 @@
-#  Loan Repayment Behaviour Analytics 
+# Project Overview — Loan Repayment Behaviour
 
-*A 21-day analytical journey — from open loan-repayment data to explainable, fair, and actionable insights.*
-
----
-
-##  Overview
-
-Late repayments often indicate financial stress or disengagement. 
-
-Every repayment tells a story — of confidence, hardship, or opportunity.  
-This project transforms open loan-repayment data into **evidence-based insights** that help financial and government organisations engage customers early, fairly, and effectively.
-
-It’s about understanding **why people repay**, **how trust is built**, and **how data can be used responsibly** to support them.
-
-This project explores open loan-repayment data to uncover factors that separate on-time payers from those who default.  
-The goal is to build interpretable, fair predictive models — inspired by **customer-centric philosophy** of early intervention and supportive engagement.
+### Understanding repayment patterns through transparent, ethical, and data-driven modelling
 
 ---
 
-##  Objective
+### Overview
 
-Conduct advanced analysis of open loan-repayment data to identify **transparent, fair, and actionable** patterns in repayment behaviour.  
-The insights will help design ethical, data-driven outreach strategies aligned with Inland Revenue’s values of fairness, empathy, and compliance.
+Late repayments often signal financial stress or disengagement.  
+This project analyses open loan-repayment data to uncover transparent, fair, and actionable patterns that distinguish consistent payers from late or defaulting customers.
 
----
-##  Project Flow - From Data to Decisions
-
-| Phase |  Key Focus | Deliverables | Output |
-|:--|:--|:--|:--|
-| 1 | **Setup & Planning** | Create repo, folder structure, utils, and documentation |  `README.md`, `utils_paths.py` |
-| 2 | **Data Intake & Cleaning** |  Consolidated and validated open loan data (600+ records) | `loan_data_clean_start.csv` |
-| 3 | **Exploratory Data Analysis** | Mapped patterns of income, credit history, and default | [ EDA Explained Report ](docs/EDA_Explained.md) |
-| 4 | **Feature Engineering** |  Derived indicators for income comfort, EMI ratio, and payment resilience | `loan_features.csv`, feature dictionary |
-| 5 | **Modelling (Planned)** | Logistic Regression & Random Forest with SHAP-based explainability | `04_model_baselines.ipynb` |
-| 6 | **Explainability & Fairness (Planned)** | Power BI storytelling dashboard for decision-maker|
+The analysis demonstrates how data science can support early and empathetic engagement by identifying behavioural and financial factors linked to repayment outcomes.
 
 ---
 
-##  Updated 21-Day Schedule (Progress → Feature Engineering)
+### Objective
 
-| Day Range | Focus Area | Deliverables | Status |
-|:--|:--|:--|:--|
-| **1-2** | Repository setup, `.gitignore`, project board, utils | Base repo live + paths configured |  Done |
-| **3-4** | Data acquisition & intake | Clean CSV, missing-value analysis |  Done |
-| **5-7** | Exploratory Data Analysis | Distributions, correlations, fairness snapshot |  Done |
-| **8-9** | Feature design | Income-loan ratio, EMI, balance-income, bins |  In Progress |
-| **10** | Feature validation + export | Feature dictionary + ready CSV |  Pending |
+To conduct a structured, explainable analysis of loan-repayment behaviour and build models that:
+- Identify key drivers of repayment and financial stress.  
+- Support fair, transparent decision-making.  
+- Provide interpretable risk segmentation for targeted communication.
 
 ---
 
-##  Headline Insights  
+### Project Flow – From Data to Decisions
 
-> **Credit History is Destiny, but Income Comfort Builds Confidence.**
+| Phase | Focus | Deliverables | Efforts(Days) | Status |
+|:--|:--|:--|:--|:--|
+| 1 | Setup & Planning | Repo, folder structure, utilities | 1 – 2 | Done |
+| 2 | Data acquisition & intake | Consolidated open loan data -Clean CSV, missing-value analysis | 3 – 4 | Done |
+| 3 | Exploratory Data Analysis | Patterns of income,Distributions, correlations, fairness snapshot | 5 – 7 | Done |
+| 4 | Feature Engineering | Derived affordability and resilience indicators - Ratio features, VIF & leakage audit | 8 – 10 | Done |
+| 5 | Baseline Modelling | Logistic Regression & Random Forest pipelines ... | 11 – 15 | In progress |
+| 6 | Explainability & Fairness | SHAP explainers, calibration, dashboard | 16-18 | upcoming |
+| 7 | Dashboard & Reporting | Power BI / Markdown reports | 19 – 21 | Planned |
+---
 
-| Factor | What We Learned | What It Means |
-|:--|:--|:--|
-| **Credit History** | ~80 % approval for clean records, ~20 % for poor ones | Trust is the strongest currency in lending. |
-| **Income-to-Loan Ratio** | Better predictor than income alone | Sustainable affordability beats raw wealth. |
-| **Property Area** | Semi-urban borrowers most consistent | Economic balance drives repayment stability. |
-| **Demographics** | Gender and education differences < 5 % | Lending patterns are largely fair and inclusive. |
+### Headline Insights (to date)
+
+- Clean credit history correlates strongly with approvals; poor/unknown history lowers them markedly.
+- Affordability ratios (income-to-loan; EMI burden) explain outcomes better than raw income alone.
+- Regional segments vary in stability; semi-urban borrowers are consistently solid in this dataset.
+- Observed demographic gaps are small in this sample; will be rechecked with model-based tests.
 
 ---
 
-##  Visual Storytelling  
-
-<p align="center">
-  <img src="images/advanced_eda_viz/correlation_heatmap.png" alt="Correlation Heatmap" width="30%"/>
-  <img src="images/advanced_eda_viz/violin_Credit_History_by_target.png" alt="Credit History Violin Plot" width="30%"/>
-  <img src="images/advanced_eda_viz/boxen_Credit_History_by_target.png" alt="Credit History Boxen Plot" width="30%"/>
-</p>
-
-**Figure:**  
-(1) Correlations show credit history as the most influential factor.  
-(2) Violin plots reveal distribution of repayment probability.  
-(3) Boxen plots highlight variability between risk groups.
+### Key Artifacts
+- `data/processed/loan_data_model_base.csv` — model‑ready dataset  
+- `data/processed/feature_dictionary.csv` — column roles & descriptions  
+- `docs/EDA_Explained.md` — narrative EDA report  
+- `docs/Feature_Engineering_Explained.md` — feature work & rationale  
 
 ---
 
-## ️ Analytical Backbone  
+### Getting Started
 
-| Concept | Formula | Role in the Analysis |
-|:--|:--|:--|
-| **Approval Rate** | $\hat{p}=x/n$ | Quantifies success ratio within each borrower segment. |
-| **Confidence Interval** | $\hat{p}\pm1.96\sqrt{\hat{p}(1-\hat{p})/n}$ | Measures reliability of observed rates. |
-| **Correlation** | $r_{XY}=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)$ | Evaluates feature influence on repayment. |
-| **Fairness Gap** | $\Delta_{AB}=|\hat{p}_A-\hat{p}_B|$ | Tests equity across customer subgroups. |
+```
+# 1. Clone the repository
+git clone https://github.com/MadhuriMapari/loan-repayment-behaviour.git
+cd loan-repayment-behaviour
 
-These metrics ground the visuals in statistical credibility — every conclusion is testable and traceable.
+# (optional) create & activate venv
+python -m venv .venv
 
----
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
 
-##  Key insights  
-
-- **For Financial Institutions:** Identify early signs of payment stress and offer tailored repayment pathways.  
-- **For Policymakers:** Track fairness in credit access and outcomes to maintain trust in public programmes.  
-- **For Data Teams:** Build interpretable, bias-aware models that align with both performance and equity.  
-- **For Citizens:** Transparent analytics that explain *why* decisions are made — not just *what* decisions are made.
+pip install -r requirements.txt
+jupyter lab
+```
 
 ---
 
-##  Full Analytical Report  
-
-- [Read the complete EDA report ](docs/EDA_Explained.md)  
-- [Feature Engineering Explained](docs/Feature_Engineering_Explained.md)
-Includes detailed visuals, formula explanations, and fairness analysis.
-
----
-##  Next Steps (Feature Engineering)
-
-1. **Derive new behavioural features**  
-   - `IncomeToLoanRatio`, `BalanceIncome`, `EMI`, `FamilySize`
-2. **Create categorical bands**  
-   - Income bands, Loan amount bands, and Term bands for interpretability
-3. **Validate feature distributions**  
-   - Ensure no negative or skewed features distort models
-4. **Save processed dataset**  
-   - `loan_features.csv` in `/data/processed/`
+What to run (in order)
+- ```notebooks/01_data_intake.ipynb```
+- ```notebooks/02_eda_advanced.ipynb```
+- ```notebooks/03_feature_engineering.ipynb``` : writes data/processed/loan_data_model_base.csv
+- ```notebooks/04_model_baselines.ipynb``` : trains/evaluates baselines; saves plots under images/model_baselines/
 
 ---
 
-##  Author  
+## Next Milestones
+1. Finalise baseline metrics: ROC-AUC, PR-AUC, lift@top10, calibration error.
+2. Add SHAP summary & dependence plots; short fairness snapshot by key groups.
+3. Publish concise model summary and recommendations for outreach actions.
 
-**Madhuri Mapari**  
-*Data & AI Specialist — blending analytics, fairness, and storytelling to power responsible decisions.*
-
----
-
-*Updated October 2025 • Part of the Loan Repayment Behaviour Analytics Project*
+**License**: Apache-2.0
